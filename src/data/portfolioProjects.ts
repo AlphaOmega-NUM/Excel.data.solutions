@@ -32,7 +32,8 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/src/assets/images/portfolio_data_cleaning_1795256348412.jpg",
     imageAlt:
       "Demonstration preview showing uncategorized raw records transformed into a standardized financial tracking sheet",
-    projectUrl: "REPLACE_WITH_DATA_CLEANING_GOOGLE_SHEETS_URL",
+    projectUrl:
+      "https://docs.google.com/spreadsheets/d/12Zpm7cxkWq_4XAlEbNfV665BvsVhojVT/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
   },
   {
     id: "spreadsheet-organization",
@@ -51,7 +52,8 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/src/assets/images/portfolio_spreadsheet_org_1795256348481.jpg",
     imageAlt:
       "Minimalist structured spreadsheet tables with organized forest green and sage header hierarchy",
-    projectUrl: "REPLACE_WITH_SPREADSHEET_ORGANIZATION_GOOGLE_SHEETS_URL",
+    projectUrl:
+      "https://docs.google.com/spreadsheets/d/1wnYgWfoOeKVQDldTZ0ESsKVhwMNkSccI/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
   },
   {
     id: "sales-dashboard",

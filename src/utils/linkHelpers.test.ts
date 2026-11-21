@@ -27,13 +27,27 @@ test("isSafeExternalUrl accepts valid https, http, and mailto links while reject
   assert.equal(isSafeExternalUrl("not-a-valid-url"), false);
 });
 
-test("resolveConfiguredLink marks all default portfolio and contact placeholders as unconfigured", () => {
+test("resolveConfiguredLink handles configured Google Sheets URLs and remaining placeholders", () => {
   assert.equal(portfolioProjects.length, 6);
+  const expectedConfiguredUrls: Record<string, string> = {
+    "data-cleaning":
+      "https://docs.google.com/spreadsheets/d/12Zpm7cxkWq_4XAlEbNfV665BvsVhojVT/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
+    "spreadsheet-organization":
+      "https://docs.google.com/spreadsheets/d/1wnYgWfoOeKVQDldTZ0ESsKVhwMNkSccI/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
+  };
+
   for (const project of portfolioProjects) {
     const resolved = resolveConfiguredLink(project.projectUrl);
-    assert.equal(resolved.isConfigured, false);
-    assert.equal(resolved.href, null);
-    assert.ok(resolved.placeholderKey?.startsWith("REPLACE_WITH_"));
+    const expectedUrl = expectedConfiguredUrls[project.id];
+    if (expectedUrl) {
+      assert.equal(resolved.isConfigured, true);
+      assert.equal(resolved.href, expectedUrl);
+      assert.equal(resolved.placeholderKey, null);
+    } else {
+      assert.equal(resolved.isConfigured, false);
+      assert.equal(resolved.href, null);
+      assert.ok(resolved.placeholderKey?.startsWith("REPLACE_WITH_"));
+    }
   }
 
   const contactResolved = resolveConfiguredLink(SITE_CONFIG.contactUrl);
