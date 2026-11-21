@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(150, 20%, 12%);
+
+  --primary: hsl(145, 38%, 30%);
+  --primary-foreground: hsl(0, 0%, 100%);
+
+  --accent: hsl(142, 35%, 88%);
+  --accent-foreground: hsl(145, 38%, 25%);
+
+  --muted: hsl(140, 15%, 96%);
+  --muted-foreground: hsl(150, 8%, 45%);
+
+  --border: hsl(145, 12%, 88%);
+  --card: hsl(0, 0%, 100%);
+
+  --soft-green: hsl(145, 32%, 94%);
+  --dark-green: hsl(150, 30%, 14%);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+.bg-subtle-grid {
+  background-image:
+    linear-gradient(to right, hsla(145, 18%, 60%, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(145, 18%, 60%, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
