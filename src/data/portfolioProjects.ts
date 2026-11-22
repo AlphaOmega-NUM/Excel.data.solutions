@@ -72,11 +72,12 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/src/assets/images/portfolio_sales_dashboard_1795256348402.jpg",
     imageAlt:
       "Sales performance dashboard demonstration with KPI summaries, bar charts, trend line, and regional table",
-    projectUrl: "REPLACE_WITH_SALES_DASHBOARD_GOOGLE_SHEETS_URL",
+    projectUrl:
+      "https://docs.google.com/spreadsheets/d/1u9VdRf-o091Ck0isnvLqNFRa6SjLdZoF/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
   },
   {
     id: "inventory",
-    title: "Inventory Management System",
+    title: "Sorting, Filtering & Data Organization",
     category: "Spreadsheet Management",
     description:
       "A structured inventory tracking spreadsheet designed to organize product records and monitor stock information.",
@@ -91,7 +92,8 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/src/assets/images/portfolio_inventory_system_1795256348346.jpg",
     imageAlt:
       "Inventory management spreadsheet demonstration tracking SKUs, stock levels, reorder thresholds, and stock values",
-    projectUrl: "REPLACE_WITH_INVENTORY_GOOGLE_SHEETS_URL",
+    projectUrl:
+      "https://docs.google.com/spreadsheets/d/1PZHDGiPz78d_fpa3jjOdxLucdlPxTFAr/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
   },
   {
     id: "business-reporting",
@@ -110,7 +112,8 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/src/assets/images/portfolio_business_reporting_1795256348497.jpg",
     imageAlt:
       "Executive business reporting layout combining structured performance tables with regional comparison and variance charts",
-    projectUrl: "REPLACE_WITH_BUSINESS_REPORTING_GOOGLE_SHEETS_URL",
+    projectUrl:
+      "https://docs.google.com/spreadsheets/d/1crSJRoCaM4HHrDC9tzNHOyaIKeAPvxNH/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
   },
   {
     id: "power-query",
@@ -129,6 +132,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/src/assets/images/portfolio_power_query_1795256348525.jpg",
     imageAlt:
       "Repeatable Power Query data transformation workflow from raw table input through transformation steps to structured output",
-    projectUrl: "REPLACE_WITH_POWER_QUERY_GOOGLE_SHEETS_URL",
+    projectUrl:
+      "https://docs.google.com/spreadsheets/d/1ebSE2Y0euV4QCTYG5rbwTpcnNOfAvmha/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
   },
 ];

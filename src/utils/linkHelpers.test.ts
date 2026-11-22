@@ -34,20 +34,23 @@ test("resolveConfiguredLink handles configured Google Sheets URLs and remaining 
       "https://docs.google.com/spreadsheets/d/12Zpm7cxkWq_4XAlEbNfV665BvsVhojVT/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
     "spreadsheet-organization":
       "https://docs.google.com/spreadsheets/d/1wnYgWfoOeKVQDldTZ0ESsKVhwMNkSccI/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
+    "sales-dashboard":
+      "https://docs.google.com/spreadsheets/d/1u9VdRf-o091Ck0isnvLqNFRa6SjLdZoF/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
+    inventory:
+      "https://docs.google.com/spreadsheets/d/1PZHDGiPz78d_fpa3jjOdxLucdlPxTFAr/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
+    "business-reporting":
+      "https://docs.google.com/spreadsheets/d/1crSJRoCaM4HHrDC9tzNHOyaIKeAPvxNH/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
+    "power-query":
+      "https://docs.google.com/spreadsheets/d/1ebSE2Y0euV4QCTYG5rbwTpcnNOfAvmha/edit?usp=drive_link&ouid=100811396853313147691&rtpof=true&sd=true",
   };
 
   for (const project of portfolioProjects) {
     const resolved = resolveConfiguredLink(project.projectUrl);
     const expectedUrl = expectedConfiguredUrls[project.id];
-    if (expectedUrl) {
-      assert.equal(resolved.isConfigured, true);
-      assert.equal(resolved.href, expectedUrl);
-      assert.equal(resolved.placeholderKey, null);
-    } else {
-      assert.equal(resolved.isConfigured, false);
-      assert.equal(resolved.href, null);
-      assert.ok(resolved.placeholderKey?.startsWith("REPLACE_WITH_"));
-    }
+    assert.ok(expectedUrl, `Expected configured URL for project ${project.id}`);
+    assert.equal(resolved.isConfigured, true);
+    assert.equal(resolved.href, expectedUrl);
+    assert.equal(resolved.placeholderKey, null);
   }
 
   const contactResolved = resolveConfiguredLink(SITE_CONFIG.contactUrl);
